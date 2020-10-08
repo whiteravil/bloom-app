@@ -1616,7 +1616,8 @@
 				babyApart: true,
 				link: '#',
 				liked: 44,
-				userLike: false
+				userLike: false,
+				recommended: false,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1629,7 +1630,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 124,
-				userLike: true
+				userLike: true,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1642,7 +1644,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 55,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1655,7 +1658,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 12,
-				userLike: true
+				userLike: true,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1668,7 +1672,8 @@
 				babyApart: true,
 				link: '#',
 				liked: 55,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1681,7 +1686,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 13,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1694,7 +1700,8 @@
 				babyApart: true,
 				link: '#',
 				liked: 42,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1707,7 +1714,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 52,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1720,7 +1728,8 @@
 				babyApart: false,
 				link: '#',
 				liked: 11,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 			{
 				name: '1-комн. квартира, 23 м², этаж 3/9',
@@ -1733,7 +1742,8 @@
 				babyApart: true,
 				link: '#',
 				liked: 6,
-				userLike: false
+				userLike: false,
+				recommended: true,
 			},
 		]
 
@@ -1822,6 +1832,7 @@
 							`<div class="catalog-item-image">`,
 								`<a href="${item.link}">`,
 									`<img src="${item.imageSrc}" alt="">`,
+									item.recommended ? '<div class="label">рекомендуем</div>' : '',
 								`</a>`,
 							`</div>`,
 							`<div class="catalog-item-body">`,
