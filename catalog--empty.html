@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Bloom</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<meta name="format-detection" content="telephone=no">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=ba55ac93-fd14-4b15-a3c3-41432621eb79&lang=ru_RU" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+	<div class="wrapper" data-simplebar>
+
+		<header class="header mobile-hide-logo">
+			<div class="container">
+				<div class="header-row">
+
+					<div class="header-logo">
+						<a href="#" class="logo">
+							<img src="img/logo.svg" alt="">
+						</a>
+					</div>
+
+					<div class="header-nav">
+						<a href="#" class="header-nav-link">каталог квартир</a>
+						<a href="#" class="header-nav-link">собственникам</a>
+					</div>
+
+					<div class="header-menu-btn">
+						<a href="#menu" class="menu-btn open-popup"><span></span></a>
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+		<div class="mobile-map-block">
+			<div class="mobile-map-block-click"></div>
+			<div id="map-2" class="mobile-map-container"></div>
+		</div>
+
+		<div class="s-catalog">
+			<div class="container">
+				
+				<div class="catalog-header">
+					
+					<div class="catalog-title">
+						<div class="h1">аренда квартир</div>
+						<div class="catalog-title-small">найдено <span>224 квартиры</span></div>
+					</div>
+
+					<div class="catalog-filters-height"></div>
+
+					<div class="catalog-filters-wrapper">
+						<div class="catalog-filters-row">
+
+							<button class="filter-fixed-btn">
+								<span>13</span>
+							</button>
+
+							<div class="catalog-filters-left catalog-filters-mob-left">
+								<div class="catalog-filters-left-row">
+									<button class="close-filter-menu-btn"></button>
+									<div class="catalog-filters-item catalog-filters-item-metro">
+										<div class="catalog-filters-item-label">станция метро</div>
+										<div class="find-aparts-select-address">
+											<select class="select-address catalog-filters-select-metro" data-placeholder="станция метро" multiple>
+												<option value="1">Авиамоторная</option>
+												<option value="2">Автозаводская</option>
+												<option value="3">Академическая</option>
+												<option value="4">Александровский сад</option>
+												<option value="5">Алексеевская</option>
+												<option value="6">Алма-Атинская</option>
+												<option value="7">Алтуфьево</option>
+												<option value="8">Аннино</option>
+												<option value="9">Арбатская (Арбатско-Покровская линия)</option>
+												<option value="10">Арбатская (Филевская линия)</option>
+												<option value="11">Ботанический сад</option>
+												<option value="12">Братиславская</option>
+												<option value="13">Бульвар адмирала Ушакова</option>
+												<option value="14">Бульвар Дмитрия Донского</option>
+												<option value="15">Бунинская аллея</option>
+												<option value="16">Варшавская</option>
+												<option value="17">ВДНХ</option>
+												<option value="18">Владыкино</option>
+												<option value="19">Водный стадион</option>
+												<option value="20">Войковская</option>
+											</select>
+										</div>
+									</div>
+									<div class="catalog-filters-item">
+										<div class="catalog-filters-item-label">количество комнат</div>
+										<div class="catalog-filters-checkbox-group">
+											<div class="catalog-filters-active-checkboxes"></div>
+											<div class="catalog-filters-checkboxes-drop">
+												<div class="catalog-filters-checkboxes-drop-block">
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox" checked>
+														<span>1-3 комн.</span>
+													</label>
+												</div>
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox">
+														<span>Студия</span>
+													</label>
+												</div>
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox">
+														<span>2 этажа</span>
+													</label>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="catalog-filters-item">
+										<div class="catalog-filters-item-label">количество гостей</div>
+										<select class="select-styles">
+											<option value="1">1 гость</option>
+											<option value="2" selected>2 гостя</option>
+											<option value="2">3 и более</option>
+										</select>
+									</div>
+									<div class="catalog-filters-item">
+										<div class="catalog-filters-item-label">выбрать дату</div>
+										<input type="text" class="date-input date-picker" data-format="DD.MM" value="02.02 — 02.05" readonly>
+									</div>
+								</div>
+								<div class="catalog-filters-more">
+									<a href="#" class="btn-extrasmall open-more-filter">больше фильтров</a>
+									<div class="catalog-filters-drop">
+										<div class="catalog-filters-drop-container">
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">вид из окна</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="checkbox" checked>
+														<span>на улицу</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="checkbox">
+														<span>во двор</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">вид из окна</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="playground" checked>
+														<span>есть</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="playground">
+														<span>неважно</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">этаж</div>
+												<div class="form-row">
+													<input type="number" class="form-control small" placeholder="от">
+													<input type="number" class="form-control small" placeholder="до">
+												</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="checkbox" checked>
+														<span>не первый</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="checkbox">
+														<span>не последний</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">этаж</div>
+												<div class="row">
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>телевизор</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>wi-fi</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>кондиционер</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>камин</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>спортзал</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>бассейн</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>сауна</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>кабельное тв</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">цена, <span>₽</span></div>
+												<div class="form-row">
+													<input type="number" class="form-control middle" placeholder="от">
+													<input type="number" class="form-control middle" placeholder="до">
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">техника</div>
+												<div class="row">
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>стиральная машина</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>телевизор</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>свч печь</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>утюг</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>фен</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>игровая приставка</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">проживание с питомцем</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="pet" checked>
+														<span>неважно</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="pet">
+														<span>можно</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="pet">
+														<span>нельзя</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">проживание с питомцем</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="parking" checked>
+														<span>есть</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="parking">
+														<span>неважно</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-submit">
+												<button class="btn close-filter">применить</button>
+												<a href="#" class="catalog-filters-drop-clear">Очистить</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-filters-left-mob-btns">
+									<a href="#" class="btn to-apply">применить</a>
+									<a href="#" class="btn to-clear">очистить</a>
+								</div>
+							</div>
+
+							<div class="catalog-filters-right">
+								<div class="catalog-show-btns">
+									<a href="#catalog-map" class="btn-extrasmall btn-extrasmall-icon open-popup">
+										<img src="img/icons/map.svg" alt="">смотреть на карте
+									</a>
+									<div class="view-type-btns">
+										<a href="#" class="view-type active"><img src="img/icons/grid-2.svg" alt=""></a>
+										<a href="#" class="view-type"><img src="img/icons/grid-3.svg" alt=""></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="catalog-filters-selected">
+						<div class="catalog-filters-selected-item">
+							<div class="catalog-filters-selected-name">этаж: не первый</div>
+							<div class="catalog-filters-selected-close"></div>
+						</div>
+						<div class="catalog-filters-selected-item">
+							<div class="catalog-filters-selected-name">телевизор</div>
+							<div class="catalog-filters-selected-close"></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="catalog-row row"></div>
+
+				<div class="catalog-empty">
+					<div class="catalog-empty-text">подходящей квартиры не найдено 😔</div>
+					<div class="catalog-empty-btn">
+						<button class="btn btn-medium">сбросить фильтр</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="catalog-filters-drop-bg"></div>
+
+	</div>
+
+	<div class="popup-wrapper" id="menu">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="big-menu-block">
+
+					<div class="big-menu-header">
+						<div class="logo"><img src="img/logo.svg" alt=""></div>
+						<div class="popup-close"></div>
+					</div>
+
+					<div class="big-menu-left">
+						<nav class="soc">
+							<a href="#" class="soc-link"><img src="img/icons/twitter.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/facebook.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/instagram.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/vk.svg" alt=""></a>
+						</nav>
+					</div>
+
+					<div class="big-menu-right">
+						<nav class="big-menu-nav">
+							<a href="#">главная</a>
+							<a href="#">каталог квартир</a>
+							<a href="#">собственникам</a>
+						</nav>
+						<nav class="big-menu-sec-nav">
+							<a href="#">текстовая страница</a>
+							<a href="#">текстовая</a>
+						</nav>
+						<nav class="soc">
+							<a href="#" class="soc-link"><img src="img/icons/twitter.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/facebook.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/instagram.svg" alt=""></a>
+							<a href="#" class="soc-link"><img src="img/icons/vk.svg" alt=""></a>
+						</nav>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper opened" id="catalog-map" style="display: block;">
+		<div class="popup-flex">
+
+			<div class="popup-block">
+				<div class="catalog-map-row">
+
+					<div class="catalog-map-back-link"></div>
+
+					<button class="filter-fixed-btn">
+						<span>13</span>
+					</button>
+
+					<div class="catalog-map-left" data-simplebar>
+
+						<div class="popup-close"></div>
+
+						<div class="catalog-title">
+							<div class="h1">аренда квартир</div>
+							<div class="catalog-title-small">найдено <span>224 квартиры</span></div>
+						</div>
+
+						<div class="catalog-filters-row">
+
+							<div class="catalog-filters-left">
+								<div class="catalog-filters-left-row">
+									<div class="catalog-filters-item catalog-filters-item-metro">
+										<div class="find-aparts-select-address">
+											<select class="select-address catalog-filters-select-metro" data-placeholder="станция метро" multiple>
+												<option value="1">Авиамоторная</option>
+												<option value="2">Автозаводская</option>
+												<option value="3">Академическая</option>
+												<option value="4">Александровский сад</option>
+												<option value="5">Алексеевская</option>
+												<option value="6">Алма-Атинская</option>
+												<option value="7">Алтуфьево</option>
+												<option value="8">Аннино</option>
+												<option value="9">Арбатская (Арбатско-Покровская линия)</option>
+												<option value="10">Арбатская (Филевская линия)</option>
+												<option value="11">Ботанический сад</option>
+												<option value="12">Братиславская</option>
+												<option value="13">Бульвар адмирала Ушакова</option>
+												<option value="14">Бульвар Дмитрия Донского</option>
+												<option value="15">Бунинская аллея</option>
+												<option value="16">Варшавская</option>
+												<option value="17">ВДНХ</option>
+												<option value="18">Владыкино</option>
+												<option value="19">Водный стадион</option>
+												<option value="20">Войковская</option>
+											</select>
+										</div>
+									</div>
+									<div class="catalog-filters-item">
+										<div class="catalog-filters-checkbox-group">
+											<div class="catalog-filters-active-checkboxes"></div>
+											<div class="catalog-filters-checkboxes-drop">
+												<div class="catalog-filters-checkboxes-drop-block">
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox" checked>
+														<span>1-3 комн.</span>
+													</label>
+												</div>
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox">
+														<span>Студия</span>
+													</label>
+												</div>
+												<div class="catalog-filters-checkboxes-drop-item">
+													<label class="checkbox-label form-checkbox-label">
+														<input type="checkbox">
+														<span>2 этажа</span>
+													</label>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="catalog-filters-item">
+										<select class="select-styles">
+											<option value="1">1 гость</option>
+											<option value="2" selected>2 гостя</option>
+											<option value="2">3 и более</option>
+										</select>
+									</div>
+									<div class="catalog-filters-item">
+										<input type="text" class="date-input date-picker" data-format="DD.MM.YY" value="02.02.20 — 02.05.20" readonly>
+									</div>
+								</div>
+								<div class="catalog-filters-more">
+									<a href="#" class="btn-extrasmall open-more-filter">еще <img src="img/icons/filter.svg" alt=""></a>
+									<div class="catalog-filters-drop">
+										<div class="catalog-filters-drop-container">
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">вид из окна</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="checkbox" checked>
+														<span>на улицу</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="checkbox">
+														<span>во двор</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">вид из окна</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="playground" checked>
+														<span>есть</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="playground">
+														<span>неважно</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">этаж</div>
+												<div class="form-row">
+													<input type="number" class="form-control small" placeholder="от">
+													<input type="number" class="form-control small" placeholder="до">
+												</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="checkbox" checked>
+														<span>не первый</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="checkbox">
+														<span>не последний</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">этаж</div>
+												<div class="row">
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>телевизор</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>wi-fi</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>кондиционер</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>камин</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>спортзал</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>бассейн</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>сауна</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>кабельное тв</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">цена, <span>₽</span></div>
+												<div class="form-row">
+													<input type="number" class="form-control middle" placeholder="от">
+													<input type="number" class="form-control middle" placeholder="до">
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">техника</div>
+												<div class="row">
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>стиральная машина</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>телевизор</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>свч печь</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>утюг</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>фен</span>
+														</label>
+													</div>
+													<div class="col-lg-6">
+														<label class="checkbox-label">
+															<input type="checkbox">
+															<span>игровая приставка</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">проживание с питомцем</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="pet" checked>
+														<span>неважно</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="pet">
+														<span>можно</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="pet">
+														<span>нельзя</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-item">
+												<div class="filter-label">проживание с питомцем</div>
+												<div class="checkbox-group">
+													<label class="checkbox-label">
+														<input type="radio" name="parking" checked>
+														<span>есть</span>
+													</label>
+													<label class="checkbox-label">
+														<input type="radio" name="parking">
+														<span>неважно</span>
+													</label>
+												</div>
+											</div>
+											<div class="catalog-filters-drop-submit">
+												<button class="btn close-filter">применить</button>
+												<a href="#" class="catalog-filters-drop-clear">Очистить</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="catalog-filters-selected">
+							<div class="catalog-filters-selected-item">
+								<div class="catalog-filters-selected-name">этаж: не первый</div>
+								<div class="catalog-filters-selected-close"></div>
+							</div>
+							<div class="catalog-filters-selected-item">
+								<div class="catalog-filters-selected-name">телевизор</div>
+								<div class="catalog-filters-selected-close"></div>
+							</div>
+						</div>
+
+						<div class="catalog-map-list-wrapper">
+							<div class="map-loader opened">
+								<div class="loader">
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="catalog-empty">
+								<div class="catalog-empty-text">подходящей квартиры не найдено 😔</div>
+								<div class="catalog-empty-btn">
+									<button class="btn btn-medium">сбросить фильтр</button>
+								</div>
+							</div>
+							<div class="catalog-map-list">
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="catalog-map-right">
+
+						<div class="catalog-map-header">
+							<div class="header-row">
+
+								<div class="header-logo">
+									<a href="#" class="logo">
+										<img src="img/logo-purple.svg" alt="">
+									</a>
+								</div>
+
+								<div class="header-nav">
+									<a href="#" class="header-nav-link">каталог квартир</a>
+									<a href="#" class="header-nav-link">собственникам</a>
+								</div>
+
+								<div class="header-menu-btn">
+									<a href="#menu" class="menu-btn open-popup"><span></span></a>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="map-container">
+							<div class="map-loader opened">
+								<div class="loader">
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div id="map"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="popup-bg"></div>
+
+		</div>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+	<script type="text/javascript">
+
+		"use strict";
+
+		let catalogData = [
+		]
+
+		ymaps.ready(init);
+
+		function init() {
+
+			let myMap = new ymaps.Map("map", {
+				center: [55.789213, 49.134980],
+				zoom: 18,
+				controls: [],
+				duration: 1000
+			}, {
+				suppressMapOpenBlock: true
+			});
+
+			let myMap2 = new ymaps.Map("map-2", {
+				center: [55.789213, 49.134980],
+				zoom: 17,
+				controls: [],
+				duration: 1000
+			}, {
+				suppressMapOpenBlock: true
+			});
+
+			let myCollection = new ymaps.GeoObjectCollection();
+			let myCollection2 = new ymaps.GeoObjectCollection();
+
+			let MyBalloonLayout = ymaps.templateLayoutFactory.createClass('<div class="popover top">' + '<a class="close popover-close" href="#"><span class="icon-close"></span></a>' + '<div class="arrow"></div>' + '<div class="popover-inner">' + '$[[options.contentLayout observeSize minWidth=328 maxWidth=328 maxHeight=110 minHeight=110]]' + '</div>' + '</div>', {
+				build: function build() {
+					this.constructor.superclass.build.call(this);
+					this._$element = $('.popover', this.getParentElement());
+					this.applyElementOffset();
+
+					this._$element.find('.close').on('click', $.proxy(this.onCloseClick, this));
+				},
+				clear: function clear() {
+					this._$element.find('.close').off('click');
+
+					this.constructor.superclass.clear.call(this);
+				},
+				onSublayoutSizeChange: function onSublayoutSizeChange() {
+					MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+					if (!this._isElement(this._$element)) {
+						return;
+					}
+
+					this.applyElementOffset();
+					this.events.fire('shapechange');
+				},
+				applyElementOffset: function applyElementOffset() {
+					this._$element.css({
+						left: -(this._$element[0].offsetWidth / 2),
+						top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
+					});
+				},
+				onCloseClick: function onCloseClick(e) {
+					e.preventDefault();
+					this.events.fire('userclose');
+				},
+				getShape: function getShape() {
+					if (!this._isElement(this._$element)) {
+						return MyBalloonLayout.superclass.getShape.call(this);
+					}
+
+					let position = this._$element.position();
+
+					return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([[position.left, position.top], [position.left + this._$element[0].offsetWidth, position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight]]));
+				},
+				_isElement: function _isElement(element) {
+					return element && element[0] && element.find('.arrow')[0];
+				}
+			});
+
+			let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass('<div class="popover-content">$[properties.balloonContent]</div>');
+
+			let ballonCont;
+
+			function filterApiData() {
+
+				catalogData.forEach(item => {
+
+					$('.catalog-map-list').append([
+						`<div class="catalog-item" data-xcoord="${item.coordinates[0]}" data-ycoord="${item.coordinates[1]}">`,
+							`<div class="catalog-item-image">`,
+								`<a href="${item.link}">`,
+									`<img src="${item.imageSrc}" alt="">`,
+									item.recommended ? '<div class="label">рекомендуем</div>' : '',
+								`</a>`,
+							`</div>`,
+							`<div class="catalog-item-body">`,
+								`<div class="catalog-item-info">`,
+									`<div class="catalog-item-price"><span>${item.price} </span>₽/мес</div>`,
+								`</div>`,
+								`<div class="catalog-item-name">`,
+									`<div class="catalog-item-title"><a href="${item.link}">${item.name}</a></div>`,
+								`</div>`,
+								`<div class="catalog-item-position">${item.metro} <img src="img/icons/human-walking.svg" alt=""></div>`,
+								`<div class="catalog-item-icons">`,
+									`${item.airConditioning ? '<img src="img/icons/snow.svg" alt="">' : ''}`,
+									`${item.wifi ? '<img src="img/icons/wifi.svg" alt="">' : ''}`,
+									`${item.babyApart ? '<img src="img/icons/baby.svg" alt="">' : ''}`,
+								`</div>`,
+								`<div class="catalog-item-likes">`,
+									`${item.liked}`,
+									`<span class="heart-likes ${item.userLike ? 'active' : ''}"><img src="img/icons/heart.svg" alt=""></span>`,
+								`</div>`,
+							`</div>`,
+						`</div>`,
+					].join(''));
+
+					ballonCont = [
+						`<div class="balloon-apart">`,
+							`<div class="balloon-apart-row">`,
+								`<a href="${item.link}" class="balloon-apart-link">`,
+								`<div class="balloon-apart-image">`,
+									`<a href="${item.link}"><img src="${item.imageSrc}" alt=""></a>`,
+								`</div>`,
+								`<div class="balloon-apart-content">`,
+									`<div class="balloon-apart-price">${item.price} ₽/мес</div>`,
+									`<div class="balloon-apart-name"><a href="${item.link}">${item.name}</a></div>`,
+									`<div class="balloon-apart-like">`,
+										`<span class="heart-likes ${item.userLike ? 'active' : ''}"><img src="img/icons/heart-black.svg" alt=""></span>${item.liked}`,
+									`</div>`,
+								`</div>`,
+							`</div>`,
+						`</div>`,
+					].join(''),
+
+					myCollection.add(new ymaps.Placemark(item.coordinates, {
+						balloonContent: ballonCont,
+						iconContent: item.price + '₽'
+					}, {
+						balloonLayout: MyBalloonLayout,
+						balloonContentLayout: MyBalloonContentLayout,
+						balloonPanelMaxMapArea: 0,
+						balloonOffset: [-164, -121],
+						iconLayout: 'default#imageWithContent',
+						iconImageHref: 'img/map-marker.png',
+						iconImageSize: [64, 30],
+						iconImageOffset: [-32, 0],
+						hideIconOnBalloonOpen: false
+					}));
+
+					myCollection2.add(new ymaps.Placemark(item.coordinates, {
+						balloonContent: ballonCont,
+						iconContent: item.price + '₽'
+					}, {
+						balloonLayout: MyBalloonLayout,
+						balloonContentLayout: MyBalloonContentLayout,
+						balloonPanelMaxMapArea: 0,
+						balloonOffset: [-164, -121],
+						iconLayout: 'default#imageWithContent',
+						iconImageHref: 'img/map-marker.png',
+						iconImageSize: [64, 30],
+						iconImageOffset: [-32, 0],
+						hideIconOnBalloonOpen: false
+					}));
+
+					myMap.geoObjects.add(myCollection);
+					myMap2.geoObjects.add(myCollection2);
+
+				});
+
+			};
+
+			filterApiData();
+
+			let activePlacemark;
+
+			myCollection.events.add('click', function(e) {
+				if (activePlacemark) {
+					activePlacemark.options.set('iconImageHref', 'img/map-marker.png')
+				}
+				activePlacemark = e.get('target');
+				activePlacemark.options.set('iconImageHref', 'img/map-marker-accent.png');
+				myMap.panTo(activePlacemark.geometry._coordinates);
+				$('.catalog-map-list .catalog-item').each(function() {
+					let x = $(this).data('xcoord'),
+							y = $(this).data('ycoord');
+					if ( x == activePlacemark.geometry._coordinates[0] && y == activePlacemark.geometry._coordinates[1] ) {
+						let index = $(this).parent().index();
+						$('.catalog-map-list').trigger('to.owl.carousel', index)
+					}
+				});
+			});
+
+			$('.catalog-map-list .catalog-item').on('mouseover', function() {
+				if ( $(window).width() > 991 ) {
+					let x = parseFloat($(this).data('xcoord')),
+							y = parseFloat($(this).data('ycoord'));
+					myCollection.each(function(item) {
+						if ( item.geometry._coordinates[0] == x && item.geometry._coordinates[1] == y ) {
+							item.options.set('iconImageHref', 'img/map-marker-accent.png');
+						}
+					})
+				}
+			});
+
+			$('.catalog-map-list .catalog-item').on('mouseleave', function() {
+				if ( $(window).width() > 991 ) {
+					myCollection.each(function(item) {
+						item.options.set('iconImageHref', 'img/map-marker.png')
+					})
+				}
+			});
+
+			let catalogMapSlider = $('.catalog-map-list');
+
+			function initCatalogMapSlider() {
+				if ( $(window).width() > 991 ) {
+					catalogMapSlider.removeClass('owl-carousel');
+					catalogMapSlider.trigger('destroy.owl.carousel')
+				}
+				else {
+					catalogMapSlider.addClass('owl-carousel');
+					catalogMapSlider.owlCarousel({
+						items: 1,
+						nav: false,
+						dots: false,
+						margin: 12
+					})
+				}
+			}initCatalogMapSlider();
+
+			catalogMapSlider.on('translated.owl.carousel', function(e) {
+				let index 	= e.item.index,
+						current = catalogMapSlider.find('.owl-item').eq(index).find('.catalog-item'),
+						x     	= current.data('xcoord'),
+						y     	= current.data('ycoord');
+				myCollection.each(function(item) {
+					item.options.set('iconImageHref', 'img/map-marker.png');
+					if ( item.geometry._coordinates[0] == x && item.geometry._coordinates[1] == y ) {
+						item.options.set('iconImageHref', 'img/map-marker-accent.png');
+						myMap.panTo([x, y]);
+					}
+				})
+			});
+
+			myMap.behaviors.disable('scrollZoom');
+			myMap.controls.add('zoomControl');
+
+			$(window).on('resize', initCatalogMapSlider);
+
+			$('.mobile-map-block-click').on('click', function() {
+				myMap.container.fitToViewport();
+			});
+
+		}
+
+	</script>
+
+</body>
+</html>
