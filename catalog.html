@@ -76,11 +76,11 @@
 					<div class="catalog-filters-wrapper">
 						<div class="catalog-filters-row">
 
-							<button class="filter-fixed-btn">
+							<button class="filter-fixed-btn" data-filter="filter-1">
 								<span>13</span>
 							</button>
 
-							<div class="catalog-filters-left catalog-filters-mob-left">
+							<div class="catalog-filters-left catalog-filters-mob-left" data-filter="filter-1">
 								<div class="catalog-filters-left-row">
 									<button class="close-filter-menu-btn"></button>
 									<div class="catalog-filters-item catalog-filters-item-metro">
@@ -1269,7 +1269,7 @@
 
 					<div class="catalog-map-back-link"></div>
 
-					<button class="filter-fixed-btn">
+					<button class="filter-fixed-btn" data-filter="filter-2">
 						<span>13</span>
 					</button>
 
@@ -1282,10 +1282,15 @@
 							<div class="catalog-title-small">найдено <span>224 квартиры</span></div>
 						</div>
 
+						<button class="filter-fixed-btn hide-on-mob" data-filter="filter-2">
+							<span>13</span>
+						</button>
+
 						<div class="catalog-filters-row">
 
-							<div class="catalog-filters-left">
+							<div class="catalog-filters-left catalog-filters-mob-left" data-filter="filter-2">
 								<div class="catalog-filters-left-row">
+									<button class="close-filter-menu-btn"></button>
 									<div class="catalog-filters-item catalog-filters-item-metro">
 										<div class="find-aparts-select-address">
 											<select class="select-address catalog-filters-select-metro" data-placeholder="станция метро" multiple>
@@ -1535,6 +1540,10 @@
 										</div>
 									</div>
 								</div>
+								<div class="catalog-filters-left-mob-btns">
+									<a href="#" class="btn to-apply">применить</a>
+									<a href="#" class="btn to-clear">очистить</a>
+								</div>
 							</div>
 
 						</div>
@@ -1609,9 +1618,9 @@
 		</div>
 	</div>
 
-	<script src="js/scripts.min.js"></script>
+	<script src="js/scripts.min.js" defer></script>
 
-	<script type="text/javascript">
+	<script type="text/javascript" defer>
 
 		"use strict";
 
