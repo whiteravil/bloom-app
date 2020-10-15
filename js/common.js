@@ -500,9 +500,16 @@ $(function() {
 	function updateRentDate(input) {
 		let thsValue = input.val(),
 				valArr = thsValue.split(' — ');
-		$('.rent-date-item.from .date-input').text(valArr[0]);
-		$('.rent-date-item.to .date-input').text(valArr[1]);
-		$('.rent-date-item.mobile .date-input').text(valArr[0].slice(0,-5) + ' — ' + valArr[1].slice(0,-5));
+		if ( valArr.length == 2 ) {
+			$('.rent-date-item.mobile .date-input').text(valArr[0].slice(0,-5) + ' — ' + valArr[1].slice(0,-5));
+			$('.rent-date-item.from .date-input').text(valArr[0]);
+			$('.rent-date-item.to .date-input').text(valArr[1]);
+		}
+		else {
+			$('.rent-date-item.mobile .date-input').text('').html('<span class="placeholder">выберите дату</span>');
+			$('.rent-date-item.from .date-input').text('').html('<span class="placeholder">выберите дату прибытия</span>');
+			$('.rent-date-item.to .date-input').text('').html('<span class="placeholder">выберите дату выезда</span>');
+		}
 		$('.rate-date-input-from').val(valArr[0]).change();
 		$('.rate-date-input-to').val(valArr[1]).change();
 	}
@@ -631,7 +638,6 @@ $(function() {
 	$('.btn-success').on('click', function(e) {
 		e.preventDefault();
 		let id = $(this).data('success');
-		console.log(id)
 		$(id).addClass('opened');
 	});
 
@@ -729,6 +735,20 @@ $(function() {
 	// 	e.preventDefault();
 	// 	$(this).toggleClass('active')
 	// });
+
+	function clearDatepicker() {
+		$('.js-apartment-detail-price-form-date-from').val('');
+		$('.js-apartment-detail-price-form-date-to').val('').change();
+		$('.rate-date-input').val('');
+		updateRentDate($('.rate-date-input'));
+	}
+
+	datePickerInput.on('cancel.daterangepicker', function(ev, picker) {
+		clearDatepicker();
+		$(this).val('');
+		datePickerInput.data('daterangepicker').setStartDate(moment());
+		datePickerInput.data('daterangepicker').setEndDate(moment());
+	});
 
 	if ( $('.popup-wrapper:visible').length > 0 && $(window).width() < 576 ) {
 		$('body').removeClass('scroll');
